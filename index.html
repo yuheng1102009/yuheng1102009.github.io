@@ -1,25 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
 
-    <!-- CSS LINK (this connects style.css) -->
-    <link rel="stylesheet" href="style.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+body{
+    background: radial-gradient(circle at top, #0b1020, #05060f);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 10%;
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,0.3);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#7aa2ff;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:0 10%;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#b0b8d0;
+    max-width:600px;
+    line-height:1.5;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 25px;
+    background:white;
+    color:black;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.08);
+}
+
+/* TIMELINE */
+.timeline{
+    border-left:2px solid white;
+    padding-left:20px;
+}
+
+.event{
+    margin-bottom:30px;
+}
+
+.event span{
+    color:#7aa2ff;
+    font-weight:bold;
+}
+
+/* FLOAT EFFECT */
+.glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle,#4f7cff55,transparent);
+    filter:blur(60px);
+    top:10%;
+    left:60%;
+    z-index:-1;
+}
+</style>
 </head>
 
 <body>
 
-<div class="background"></div>
+<div class="glow"></div>
 
-<!-- NAVIGATION -->
 <nav>
-    <div class="logo">YN</div>
-
+    <h3>YN</h3>
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#achievements">Achievements</a></li>
@@ -28,69 +152,41 @@
     </ul>
 </nav>
 
-<!-- HERO SECTION -->
 <section class="hero">
-    <div class="hero-content">
+    <h1>Your Name</h1>
+    <p>
+        Rising junior passionate about mathematics, physics, competitions,
+        leadership, and building real-world impact through STEM.
+    </p>
 
-        <p class="intro">STUDENT • LEADER • COMPETITOR</p>
-
-        <h1>Your Name Here</h1>
-
-        <p class="description">
-            Rising junior focused on STEM, competitions, leadership, and athletics.
-        </p>
-
-        <a href="#about" class="button">Explore Portfolio</a>
-
-    </div>
+    <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        Explore More
+    </button>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
-
-    <div class="glass-card">
-        <p>
-            Write a short introduction about yourself here.
-        </p>
-    </div>
+    <p>
+        Write a strong introduction about yourself here. Focus on your goals,
+        interests, and what drives you academically and personally.
+    </p>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
     <h2>Achievements</h2>
 
     <div class="grid">
-
-        <div class="card">
-            <h3>ARML</h3>
-            <p>Gold Team Award</p>
-        </div>
-
-        <div class="card">
-            <h3>NASA Space Apps</h3>
-            <p>Top Placement</p>
-        </div>
-
-        <div class="card">
-            <h3>Ocean Challenge</h3>
-            <p>International Finalist</p>
-        </div>
-
-        <div class="card">
-            <h3>Physics</h3>
-            <p>Top Performance</p>
-        </div>
-
+        <div class="card">ARML Gold (Team)</div>
+        <div class="card">NASA Space Apps Top 5</div>
+        <div class="card">Ocean Challenge Finalist</div>
+        <div class="card">Top Physics Percentile</div>
     </div>
 </section>
 
-<!-- LEADERSHIP -->
 <section id="leadership">
     <h2>Leadership</h2>
 
     <div class="timeline">
-
         <div class="event">
             <span>2024</span>
             <p>Founded fundraising club</p>
@@ -100,21 +196,33 @@
             <span>2025</span>
             <p>MUN Outstanding Diplomacy Award</p>
         </div>
-
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
     <h2>Contact</h2>
-
-    <div class="glass-card">
-        <p>Email: your@email.com</p>
-    </div>
+    <p>Email: your@email.com</p>
 </section>
 
-<!-- JS LINK (this connects script.js) -->
-<script src="script.js"></script>
+<script>
+document.querySelectorAll(".card").forEach(card=>{
+    card.addEventListener("mousemove",(e)=>{
+        const r=card.getBoundingClientRect();
+        const x=e.clientX-r.left;
+        const y=e.clientY-r.top;
+
+        card.style.transform=
+        `perspective(800px)
+        rotateX(${-(y-r.height/2)/15}deg)
+        rotateY(${(x-r.width/2)/15}deg)
+        translateY(-10px)`;
+    });
+
+    card.addEventListener("mouseleave",()=>{
+        card.style.transform="none";
+    });
+});
+</script>
 
 </body>
 </html>
