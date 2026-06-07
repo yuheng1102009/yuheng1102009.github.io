@@ -5,79 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home | Portfolio</title>
 
+<!-- CLEAN FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Inter', sans-serif;
 }
 
 body{
     background: radial-gradient(circle at top, #0b1020, #05060f);
     color:white;
+    line-height:1.7;
 }
 
 /* NAV */
 nav{
     position:fixed;
-    width:100%;
     top:0;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:18px 8%;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.55);
     backdrop-filter:blur(12px);
+    z-index:1000;
 }
 
 nav a{
     color:white;
     text-decoration:none;
     margin-left:18px;
+    font-size:14px;
+    letter-spacing:0.5px;
+    opacity:0.85;
     transition:0.3s;
 }
 
 nav a:hover{
+    opacity:1;
     color:#7aa2ff;
 }
 
 /* HERO */
 .hero{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:0 10%;
+    padding:120px 10% 80px;
 }
 
 .hero h1{
     font-size:4rem;
+    font-weight:700;
+    letter-spacing:-1px;
+    margin-bottom:20px;
 }
 
 .hero p{
-    max-width:700px;
-    margin-top:20px;
-    color:#b0b8d0;
-    line-height:1.6;
+    max-width:750px;
+    font-size:1.1rem;
+    color:#c7cce5;
+    margin-bottom:30px;
 }
 
+/* BUTTON */
 .btn{
-    margin-top:30px;
-    padding:12px 26px;
+    padding:12px 28px;
     border:none;
     border-radius:30px;
     background:white;
     color:black;
-    font-weight:bold;
+    font-weight:600;
     cursor:pointer;
     transition:0.3s;
 }
 
 .btn:hover{
-    transform:scale(1.05);
+    transform:translateY(-2px);
 }
 
 /* SECTIONS */
@@ -86,20 +98,22 @@ section{
 }
 
 h2{
-    font-size:2.3rem;
-    margin-bottom:25px;
+    font-size:2.2rem;
+    margin-bottom:30px;
+    letter-spacing:-0.5px;
 }
 
-/* GRID CARDS */
+/* GRID */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
 }
 
+/* CARD */
 .card{
     background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.08);
     padding:25px;
     border-radius:18px;
     transition:0.3s;
@@ -110,12 +124,33 @@ h2{
     background:rgba(255,255,255,0.08);
 }
 
-/* HIGHLIGHT BOX */
-.highlight{
+/* IMAGE SECTION */
+.image-section{
+    margin-top:60px;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.image-section img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    filter:brightness(0.9);
+}
+
+/* TEXT BLOCK */
+.text-block{
     margin-top:20px;
-    padding:20px;
-    border-left:3px solid #7aa2ff;
-    background:rgba(255,255,255,0.03);
+    font-size:1rem;
+    color:#cfd3ea;
+    max-width:800px;
+}
+
+footer{
+    text-align:center;
+    padding:60px;
+    color:#888;
+    font-size:14px;
 }
 </style>
 </head>
@@ -123,7 +158,7 @@ h2{
 <body>
 
 <nav>
-    <div><b>MY PORTFOLIO</b></div>
+    <div><b>PORTFOLIO</b></div>
     <div>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -133,51 +168,81 @@ h2{
     </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
     <h1>Your Name</h1>
 
     <p>
-        Curiosity-driven student passionate about mathematics, physics,
-        engineering, leadership, and innovation. Focused on solving
-        challenging problems and building meaningful impact through STEM.
+        A curiosity-driven student passionate about mathematics, physics,
+        engineering, leadership, and innovation. I enjoy solving complex
+        problems, building impactful projects, and continuously pushing
+        the boundaries of my learning.
     </p>
 
     <button class="btn" onclick="window.location.href='about.html'">
-        Explore My Work
+        Explore My Portfolio
     </button>
 </section>
 
+<!-- INTRO SECTION -->
 <section>
-    <h2>Quick Overview</h2>
+    <h2>Overview</h2>
 
     <div class="grid">
 
         <div class="card">
             <h3>Academics</h3>
-            <p>Advanced STEM coursework and competitive math training.</p>
+            <p>Strong foundation in mathematics, physics, and analytical thinking.</p>
         </div>
 
         <div class="card">
             <h3>Competitions</h3>
-            <p>Math, physics, and global STEM challenges.</p>
+            <p>Experience in global STEM competitions and problem-solving contests.</p>
         </div>
 
         <div class="card">
             <h3>Leadership</h3>
-            <p>Model UN, fundraising initiatives, team leadership.</p>
+            <p>Model UN, team leadership, and community initiatives.</p>
         </div>
 
         <div class="card">
             <h3>Athletics</h3>
-            <p>Basketball starter focused on discipline and teamwork.</p>
+            <p>Basketball player focused on discipline, teamwork, and resilience.</p>
         </div>
 
     </div>
+</section>
 
-    <div class="highlight">
-        “Success is built through consistency, curiosity, and resilience.”
+<!-- IMAGE SECTION (YOU CAN REPLACE LINK LATER) -->
+<section>
+    <h2>Journey</h2>
+
+    <div class="image-section">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="placeholder">
+    </div>
+
+    <div class="text-block">
+        This portfolio represents my journey in academics, leadership,
+        and personal growth. Each experience has contributed to shaping
+        my mindset toward innovation, problem-solving, and impact.
     </div>
 </section>
+
+<!-- QUOTE -->
+<section>
+    <h2>Philosophy</h2>
+
+    <div class="card">
+        <p style="font-size:1.2rem; line-height:1.8;">
+            “True growth comes from curiosity, persistence, and the willingness
+            to challenge what you think you already know.”
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Your Name — Built with curiosity and ambition
+</footer>
 
 </body>
 </html>
