@@ -1,19 +1,27 @@
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("mousemove", e => {
-        const rect = card.getBoundingClientRect();
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Achievements</title>
+</head>
+<body>
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-        card.style.transform =
-        `perspective(1000px)
-         rotateX(${-(y-rect.height/2)/20}deg)
-         rotateY(${(x-rect.width/2)/20}deg)
-         translateY(-10px)`;
-    });
+<h1>Achievements</h1>
 
-    card.addEventListener("mouseleave", () => {
-        card.style.transform =
-        "perspective(1000px) rotateX(0) rotateY(0)";
-    });
-});
+<ul>
+    <li>ARML Gold Medal (Team)</li>
+    <li>ARML Silver Medal (Individual)</li>
+    <li>NASA Space Apps Challenge Top Placement</li>
+    <li>Ocean Challenge International Finalist</li>
+    <li>Top Physics Entrance Examination Performance</li>
+    <li>MUN Outstanding Diplomacy Award</li>
+</ul>
+
+</body>
+</html>
