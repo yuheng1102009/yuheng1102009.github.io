@@ -1,25 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your Name | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top, #0b1020, #05060f);
+    color:white;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(12px);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#7aa2ff;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 10%;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.hero p{
+    max-width:700px;
+    margin-top:20px;
+    color:#b0b8d0;
+    line-height:1.6;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 26px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+h2{
+    font-size:2.3rem;
+    margin-bottom:25px;
+}
+
+/* GRID CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:18px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,0.08);
+}
+
+/* HIGHLIGHT BOX */
+.highlight{
+    margin-top:20px;
+    padding:20px;
+    border-left:3px solid #7aa2ff;
+    background:rgba(255,255,255,0.03);
+}
+</style>
 </head>
+
 <body>
 
-<h1>Your Name</h1>
-<p>Curiosity Driven. Impact Focused.</p>
-
 <nav>
-    <a href="about.html">About</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="contact.html">Contact</a>
+    <div><b>MY PORTFOLIO</b></div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
-<h2>Welcome</h2>
-<p>
-Welcome to my portfolio website. Here you can learn about my academic interests,
-achievements, leadership experiences, and future aspirations.
-</p>
+<section class="hero">
+    <h1>Your Name</h1>
+
+    <p>
+        Curiosity-driven student passionate about mathematics, physics,
+        engineering, leadership, and innovation. Focused on solving
+        challenging problems and building meaningful impact through STEM.
+    </p>
+
+    <button class="btn" onclick="window.location.href='about.html'">
+        Explore My Work
+    </button>
+</section>
+
+<section>
+    <h2>Quick Overview</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Academics</h3>
+            <p>Advanced STEM coursework and competitive math training.</p>
+        </div>
+
+        <div class="card">
+            <h3>Competitions</h3>
+            <p>Math, physics, and global STEM challenges.</p>
+        </div>
+
+        <div class="card">
+            <h3>Leadership</h3>
+            <p>Model UN, fundraising initiatives, team leadership.</p>
+        </div>
+
+        <div class="card">
+            <h3>Athletics</h3>
+            <p>Basketball starter focused on discipline and teamwork.</p>
+        </div>
+
+    </div>
+
+    <div class="highlight">
+        “Success is built through consistency, curiosity, and resilience.”
+    </div>
+</section>
 
 </body>
 </html>
