@@ -18,8 +18,9 @@
 body{
     background:#05060f;
     color:white;
-    line-height:1.75;
-    letter-spacing:0.2px;
+    line-height:1.95;
+    letter-spacing:0.6px; /* 👈 more spacing between letters/words */
+    font-size:18px;       /* 👈 BASE FONT SIZE INCREASED */
 }
 
 /* NAV */
@@ -39,8 +40,8 @@ nav a{
     color:white;
     text-decoration:none;
     margin-left:16px;
-    font-size:14px;
-    opacity:0.8;
+    font-size:15px;
+    opacity:0.85;
     transition:0.2s;
 }
 
@@ -67,55 +68,56 @@ nav a:hover{
     align-items:center;
 }
 
-/* NAME */
+/* NAME BIGGER */
 .hero h1{
-    font-size:3.6rem;
-    letter-spacing:-1px;
-    margin-bottom:10px;
+    font-size:4.2rem; /* 👈 bigger */
+    letter-spacing:-0.5px;
+    margin-bottom:12px;
 }
 
+/* SUBTITLE BIGGER */
 .subtitle{
-    font-size:1.05rem;
+    font-size:1.2rem;
     color:#cfd3ea;
-    max-width:600px;
-    margin-bottom:18px;
+    max-width:650px;
+    margin-bottom:20px;
 }
 
 /* BUTTON */
 .btn{
     display:inline-block;
-    padding:12px 26px;
+    padding:14px 28px;
     background:white;
     color:black;
     border-radius:30px;
     font-weight:600;
     text-decoration:none;
     transition:0.2s;
+    font-size:16px;
 }
 
 .btn:hover{
     transform:translateY(-2px);
 }
 
-/* PROFILE IMAGE (YOUR PHOTO) */
+/* PROFILE IMAGE */
 .profile-img{
-    width:160px;
-    height:160px;
+    width:170px;
+    height:170px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid rgba(255,255,255,0.15);
     justify-self:center;
 }
 
-/* SECTION BASE */
+/* SECTIONS */
 section{
-    padding:70px 7%;
+    padding:80px 7%;
 }
 
-/* TITLES */
 h2{
-    font-size:2rem;
-    margin-bottom:20px;
+    font-size:2.3rem; /* 👈 bigger section titles */
+    margin-bottom:22px;
 }
 
 /* GRID */
@@ -129,9 +131,10 @@ h2{
 .card{
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.08);
-    padding:20px;
+    padding:22px;
     border-radius:16px;
     transition:0.25s;
+    font-size:17px;
 }
 
 .card:hover{
@@ -148,13 +151,15 @@ h2{
     margin-top:10px;
 }
 
-/* QUOTE */
+/* QUOTE (ITALIC ADDED HERE) */
 .quote{
     background:rgba(255,255,255,0.04);
     border-left:3px solid #7aa2ff;
-    padding:20px;
+    padding:22px;
     border-radius:12px;
     max-width:900px;
+    font-size:18px;
+    font-style:italic; /* 👈 FINAL PHILOSOPHY IS ITALIC */
 }
 
 /* FOOTER */
@@ -162,7 +167,7 @@ footer{
     text-align:center;
     padding:40px;
     color:#777;
-    font-size:13px;
+    font-size:14px;
 }
 </style>
 </head>
@@ -197,7 +202,6 @@ footer{
             <a class="btn" href="about.html">Explore Portfolio</a>
         </div>
 
-        <!-- YOUR IMAGE HERE -->
         <img class="profile-img"
              src="me.jpg"
              alt="Yu-Heng Liu">
