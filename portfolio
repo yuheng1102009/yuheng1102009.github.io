@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me</title>
+</head>
+<body>
 
+<nav>
+    <a href="index.html">Home</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<h1>About Me</h1>
+
+<p>
+I am a student passionate about mathematics, physics, engineering,
+leadership, and innovation.
+</p>
+
+<h2>Interests</h2>
+<ul>
+    <li>Mathematics</li>
+    <li>Physics</li>
+    <li>Engineering</li>
+    <li>Artificial Intelligence</li>
+    <li>Research</li>
+</ul>
+
+</body>
+</html>
