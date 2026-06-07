@@ -19,8 +19,9 @@ body{
     background:#05060f;
     color:white;
     line-height:1.85;
-    letter-spacing:0.4px;
+    letter-spacing:0.3px;
     font-size:18px;
+    overflow-x:hidden;
 }
 
 /* NAV */
@@ -41,7 +42,8 @@ nav a{
     text-decoration:none;
     margin-left:16px;
     font-size:15px;
-    opacity:0.85;
+    opacity:0.8;
+    transition:0.2s;
 }
 
 nav a:hover{
@@ -51,7 +53,7 @@ nav a:hover{
 
 /* HERO */
 .hero{
-    min-height:85vh;
+    min-height:88vh;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -62,22 +64,23 @@ nav a:hover{
     width:100%;
     max-width:1200px;
     display:grid;
-    grid-template-columns:1.5fr 0.5fr;
+    grid-template-columns:1.6fr 0.4fr;
     gap:40px;
     align-items:center;
 }
 
+/* NAME */
 .hero h1{
-    font-size:4rem;
-    letter-spacing:-0.8px;
-    margin-bottom:12px;
+    font-size:4.3rem;
+    letter-spacing:-1px;
+    margin-bottom:10px;
 }
 
 /* TEXT */
 .subtitle{
     font-size:1.15rem;
     color:#cfd3ea;
-    max-width:650px;
+    max-width:680px;
     margin-bottom:22px;
 }
 
@@ -90,11 +93,11 @@ nav a:hover{
     border-radius:30px;
     font-weight:600;
     text-decoration:none;
-    transition:0.2s;
+    transition:0.25s;
 }
 
 .btn:hover{
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 }
 
 /* PROFILE IMAGE */
@@ -103,18 +106,33 @@ nav a:hover{
     height:170px;
     border-radius:50%;
     object-fit:cover;
-    border:2px solid rgba(255,255,255,0.15);
+    border:2px solid rgba(255,255,255,0.18);
     justify-self:center;
+    transition:0.3s;
+}
+
+.profile-img:hover{
+    transform:scale(1.05);
 }
 
 /* SECTIONS */
 section{
-    padding:75px 7%;
+    padding:80px 7%;
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.8s ease;
 }
 
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* TITLES */
 h2{
-    font-size:2.3rem;
-    margin-bottom:22px;
+    font-size:2.4rem;
+    margin-bottom:24px;
+    letter-spacing:-0.5px;
 }
 
 /* GRID */
@@ -130,15 +148,15 @@ h2{
     border:1px solid rgba(255,255,255,0.08);
     padding:22px;
     border-radius:16px;
-    transition:0.2s;
+    transition:0.25s;
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    background:rgba(255,255,255,0.08);
+    transform:translateY(-8px);
+    background:rgba(255,255,255,0.09);
 }
 
-/* JOURNEY IMAGES */
+/* JOURNEY */
 .journey-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -147,16 +165,21 @@ h2{
 
 .journey-grid img{
     width:100%;
-    height:260px;
+    height:270px;
     object-fit:cover;
     border-radius:14px;
+    transition:0.3s;
+}
+
+.journey-grid img:hover{
+    transform:scale(1.03);
 }
 
 /* QUOTE */
 .quote{
     background:rgba(255,255,255,0.04);
     border-left:3px solid #7aa2ff;
-    padding:22px;
+    padding:24px;
     border-radius:12px;
     font-style:italic;
     max-width:900px;
@@ -165,7 +188,7 @@ h2{
 /* FOOTER */
 footer{
     text-align:center;
-    padding:40px;
+    padding:50px;
     color:#777;
     font-size:14px;
 }
@@ -174,7 +197,6 @@ footer{
 
 <body>
 
-<!-- NAV -->
 <nav>
     <div><b>Yu-Heng Liu</b></div>
     <div>
@@ -188,7 +210,6 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-
     <div class="hero-container">
 
         <div>
@@ -199,7 +220,7 @@ footer{
 
                 <br><br>
 
-                Beyond academics, I am also an athlete who values discipline, teamwork, and consistency developed through sports training and competition. I naturally take on leadership roles in group settings, often helping organize, coordinate, and motivate teams toward shared goals.
+                Beyond academics, I am also an athlete who values discipline, teamwork, and consistency developed through sports training and competition. I naturally take on leadership roles in group settings, helping organize, coordinate, and motivate teams toward shared goals.
             </p>
 
             <a class="btn" href="about.html">Explore Portfolio</a>
@@ -223,12 +244,12 @@ footer{
 
         <div class="card">
             <h3>Competitions</h3>
-            <p>STEM olympiads, international contests, and problem solving.</p>
+            <p>STEM olympiads and problem-solving competitions.</p>
         </div>
 
         <div class="card">
             <h3>Leadership</h3>
-            <p>MUN, fundraising, and team coordination experience.</p>
+            <p>MUN, fundraising, and team coordination roles.</p>
         </div>
 
         <div class="card">
@@ -251,10 +272,10 @@ footer{
 
     </div>
 
-    <p style="margin-top:12px; color:#cfd3ea; max-width:900px;">
+    <p style="margin-top:14px; color:#cfd3ea; max-width:900px;">
         My journey reflects continuous growth through academics, leadership,
         competition, and athletics. Each experience has shaped my discipline,
-        mindset, and long-term goals.
+        mindset, and long-term direction.
     </p>
 </section>
 
@@ -267,10 +288,23 @@ footer{
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     © 2026 Yu-Heng Liu
 </footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+sections.forEach(s => observer.observe(s));
+</script>
 
 </body>
 </html>
