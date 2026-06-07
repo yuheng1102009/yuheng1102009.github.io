@@ -20,7 +20,6 @@ body{
     color:white;
     line-height:1.75;
     letter-spacing:0.2px;
-    overflow-x:hidden;
 }
 
 /* NAV */
@@ -41,7 +40,7 @@ nav a{
     text-decoration:none;
     margin-left:16px;
     font-size:14px;
-    opacity:0.75;
+    opacity:0.8;
     transition:0.2s;
 }
 
@@ -98,7 +97,7 @@ nav a:hover{
     transform:translateY(-2px);
 }
 
-/* PROFILE IMAGE */
+/* PROFILE IMAGE (YOUR PHOTO) */
 .profile-img{
     width:160px;
     height:160px;
@@ -158,18 +157,6 @@ h2{
     max-width:900px;
 }
 
-/* FADE ANIMATION */
-.fade{
-    opacity:0;
-    transform:translateY(20px);
-    transition:0.8s ease;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
 /* FOOTER */
 footer{
     text-align:center;
@@ -194,7 +181,7 @@ footer{
 </nav>
 
 <!-- HERO -->
-<section class="hero fade">
+<section class="hero">
 
     <div class="hero-container">
 
@@ -202,23 +189,24 @@ footer{
             <h1>Yu-Heng Liu</h1>
 
             <p class="subtitle">
-                A STEM-driven student focused on mathematics, physics,
-                engineering, and leadership. I enjoy solving complex problems,
-                building projects, and competing in academic challenges.
+                A STEM-driven student passionate about mathematics, physics,
+                engineering, leadership, and problem-solving. I enjoy building
+                impactful projects and competing in academic challenges.
             </p>
 
             <a class="btn" href="about.html">Explore Portfolio</a>
         </div>
 
+        <!-- YOUR IMAGE HERE -->
         <img class="profile-img"
-             src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
-             alt="profile">
+             src="me.jpg"
+             alt="Yu-Heng Liu">
 
     </div>
 </section>
 
 <!-- OVERVIEW -->
-<section class="fade">
+<section>
     <h2>Overview</h2>
 
     <div class="grid">
@@ -230,12 +218,12 @@ footer{
 
         <div class="card">
             <h3>Competitions</h3>
-            <p>STEM olympiads, global contests, and problem-solving events.</p>
+            <p>STEM contests and international problem-solving challenges.</p>
         </div>
 
         <div class="card">
             <h3>Leadership</h3>
-            <p>MUN, fundraising, and school leadership roles.</p>
+            <p>MUN, fundraising, and student-led initiatives.</p>
         </div>
 
         <div class="card">
@@ -247,45 +235,30 @@ footer{
 </section>
 
 <!-- JOURNEY -->
-<section class="fade">
+<section>
     <h2>Journey</h2>
 
     <img class="image"
          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
 
-    <p style="margin-top:12px; color:#cfd3ea; max-width:900px;">
-        My journey is defined by continuous growth through academics,
-        leadership experiences, competitions, and self-driven learning.
+    <p style="margin-top:10px; color:#cfd3ea; max-width:900px;">
+        My journey reflects continuous growth through academics,
+        competitions, leadership, and personal development.
     </p>
 </section>
 
 <!-- PHILOSOPHY -->
-<section class="fade">
+<section>
     <h2>Philosophy</h2>
 
     <div class="quote">
-        “Consistency, curiosity, and resilience are the foundation of long-term success.”
+        “Consistency, curiosity, and resilience define long-term success.”
     </div>
 </section>
 
 <footer>
     © 2026 Yu-Heng Liu
 </footer>
-
-<script>
-// simple scroll animation
-const elements = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-});
-
-elements.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
