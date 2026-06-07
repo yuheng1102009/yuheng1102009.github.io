@@ -20,6 +20,8 @@ body{
     line-height:1.85;
     font-size:18px;
     overflow-x:hidden;
+
+    /* 🔥 animated background */
     background: linear-gradient(-45deg,#05060f,#0b1020,#0a0f1a,#05060f);
     background-size:400% 400%;
     animation: gradientMove 18s ease infinite;
@@ -29,6 +31,17 @@ body{
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+/* scroll progress bar */
+#progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    width:0%;
+    background:#7aa2ff;
+    z-index:9999;
 }
 
 /* NAV */
@@ -42,6 +55,7 @@ nav{
     background:rgba(0,0,0,0.4);
     backdrop-filter:blur(16px);
     z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 nav a{
@@ -50,6 +64,7 @@ nav a{
     margin-left:16px;
     font-size:15px;
     opacity:0.85;
+    transition:0.2s;
 }
 
 nav a:hover{
@@ -88,6 +103,7 @@ nav a:hover{
     margin-bottom:22px;
 }
 
+/* BUTTON */
 .btn{
     display:inline-block;
     padding:14px 30px;
@@ -103,22 +119,37 @@ nav a:hover{
     transform:translateY(-3px) scale(1.02);
 }
 
+/* PROFILE IMAGE */
 .profile-img{
     width:175px;
     height:175px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid rgba(255,255,255,0.2);
+    transition:0.3s;
+}
+
+.profile-img:hover{
+    transform:scale(1.06);
 }
 
 /* SECTIONS */
 section{
     padding:90px 7%;
+    opacity:0;
+    transform:translateY(25px);
+    transition:0.8s ease;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 h2{
     font-size:2.5rem;
     margin-bottom:24px;
+    letter-spacing:-0.6px;
 }
 
 /* GRID */
@@ -128,12 +159,19 @@ h2{
     gap:16px;
 }
 
-/* CARD */
+/* CARDS */
 .card{
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.08);
     padding:24px;
     border-radius:16px;
+    transition:0.3s;
+    backdrop-filter:blur(10px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.09);
 }
 
 /* JOURNEY */
@@ -148,6 +186,11 @@ h2{
     height:270px;
     object-fit:cover;
     border-radius:14px;
+    transition:0.3s;
+}
+
+.journey-grid img:hover{
+    transform:scale(1.04);
 }
 
 /* TIMELINE */
@@ -187,14 +230,16 @@ footer{
 
 <body>
 
+<div id="progress"></div>
+
 <nav>
     <div><b>Yu-Heng Liu</b></div>
     <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="achievements.html">Achievements</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="contact.html">Contact</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Achievements</a>
+        <a href="#">Leadership</a>
+        <a href="#">Contact</a>
     </div>
 </nav>
 
@@ -213,7 +258,7 @@ footer{
                 Beyond academics, I am also an athlete who values discipline, teamwork, and consistency developed through sports training and competition. I naturally take on leadership roles in group settings, helping organize, coordinate, and motivate teams toward shared goals.
             </p>
 
-            <a class="btn" href="about.html">Explore Portfolio</a>
+            <a class="btn" href="#">Explore Portfolio</a>
         </div>
 
         <img class="profile-img" src="me.jpg">
@@ -221,30 +266,30 @@ footer{
     </div>
 </section>
 
-<!-- CORE -->
+<!-- OVERVIEW -->
 <section>
     <h2>Core Strengths</h2>
 
     <div class="grid">
 
         <div class="card">
-            <h3>Mathematics</h3>
-            <p>Strong analytical and problem-solving foundation.</p>
+            <h3>Mathematical Thinking</h3>
+            <p>Strong analytical foundation in advanced problem solving.</p>
         </div>
 
         <div class="card">
-            <h3>Competitions</h3>
-            <p>STEM olympiads and international challenges.</p>
+            <h3>Competition Experience</h3>
+            <p>STEM olympiads, research challenges, and global contests.</p>
         </div>
 
         <div class="card">
             <h3>Leadership</h3>
-            <p>Team coordination, MUN, and initiative roles.</p>
+            <p>Team coordination, MUN, and initiative-driven projects.</p>
         </div>
 
         <div class="card">
             <h3>Athletics</h3>
-            <p>Basketball builds discipline and teamwork.</p>
+            <p>Basketball discipline translating into consistency & teamwork.</p>
         </div>
 
     </div>
@@ -261,12 +306,11 @@ footer{
     </div>
 </section>
 
-<!-- TIMELINE (UPDATED ONLY HERE) -->
+<!-- TIMELINE -->
 <section>
-    <h2>Leadership</h2>
+    <h2>Leadership Timeline</h2>
 
     <div class="timeline">
-
         <div class="event">
             <span>2024</span>
             <p>Founded fundraising club and began leadership experience</p>
@@ -274,14 +318,13 @@ footer{
 
         <div class="event">
             <span>2025</span>
-            <p>Basketball Team Vice Captain & Starting Small Forward (SF)</p>
+            <p>MUN Outstanding Diplomacy Award</p>
         </div>
 
         <div class="event">
             <span>2026</span>
-            <p>Government-sponsored Google STEM team participant</p>
+            <p>Expanded STEM competitions & academic development</p>
         </div>
-
     </div>
 </section>
 
@@ -297,6 +340,29 @@ footer{
 <footer>
     © 2026 Yu-Heng Liu
 </footer>
+
+<script>
+// scroll reveal
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add("show");
+        }
+    });
+});
+
+sections.forEach(s=>observer.observe(s));
+
+// progress bar
+window.onscroll=()=>{
+    let winScroll=document.body.scrollTop || document.documentElement.scrollTop;
+    let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    let scrolled=(winScroll/height)*100;
+    document.getElementById("progress").style.width=scrolled+"%";
+};
+</script>
 
 </body>
 </html>
