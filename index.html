@@ -18,8 +18,9 @@
 body{
     background:#05060f;
     color:white;
-    line-height:1.85;
+    line-height:1.75;
     letter-spacing:0.2px;
+    overflow-x:hidden;
 }
 
 /* NAV */
@@ -30,8 +31,8 @@ nav{
     display:flex;
     justify-content:space-between;
     padding:14px 7%;
-    background:rgba(0,0,0,0.65);
-    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(14px);
     z-index:1000;
 }
 
@@ -40,7 +41,8 @@ nav a{
     text-decoration:none;
     margin-left:16px;
     font-size:14px;
-    opacity:0.8;
+    opacity:0.75;
+    transition:0.2s;
 }
 
 nav a:hover{
@@ -48,42 +50,42 @@ nav a:hover{
     color:#7aa2ff;
 }
 
-/* HERO (NO EMPTY SPACE FIX) */
+/* HERO */
 .hero{
-    min-height:80vh;
+    min-height:85vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:110px 7% 40px;
+    padding:120px 7% 40px;
 }
 
 .hero-container{
     width:100%;
     max-width:1200px;
     display:grid;
-    grid-template-columns:1.4fr 0.6fr;
+    grid-template-columns:1.5fr 0.5fr;
     gap:40px;
     align-items:center;
 }
 
-/* TEXT */
+/* NAME */
 .hero h1{
-    font-size:3.4rem;
-    letter-spacing:-0.8px;
+    font-size:3.6rem;
+    letter-spacing:-1px;
     margin-bottom:10px;
 }
 
 .subtitle{
     font-size:1.05rem;
     color:#cfd3ea;
-    margin-bottom:18px;
     max-width:600px;
+    margin-bottom:18px;
 }
 
 /* BUTTON */
 .btn{
     display:inline-block;
-    padding:11px 24px;
+    padding:12px 26px;
     background:white;
     color:black;
     border-radius:30px;
@@ -96,65 +98,76 @@ nav a:hover{
     transform:translateY(-2px);
 }
 
-/* IMAGE (FIXED SIZE) */
+/* PROFILE IMAGE */
 .profile-img{
-    width:150px;
-    height:150px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid rgba(255,255,255,0.15);
     justify-self:center;
 }
 
-/* SECTION SPACING FIX (LESS EMPTY SPACE) */
+/* SECTION BASE */
 section{
-    padding:60px 7%;
+    padding:70px 7%;
 }
 
 /* TITLES */
 h2{
-    font-size:1.9rem;
-    margin-bottom:18px;
+    font-size:2rem;
+    margin-bottom:20px;
 }
 
 /* GRID */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:14px;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:16px;
 }
 
 /* CARD */
 .card{
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.08);
-    padding:18px;
-    border-radius:14px;
-    transition:0.2s;
+    padding:20px;
+    border-radius:16px;
+    transition:0.25s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px);
     background:rgba(255,255,255,0.08);
 }
 
-/* IMAGE SECTION */
+/* IMAGE */
 .image{
     width:100%;
-    max-height:360px;
+    max-height:380px;
     object-fit:cover;
-    border-radius:14px;
-    margin-top:12px;
+    border-radius:16px;
+    margin-top:10px;
 }
 
 /* QUOTE */
 .quote{
-    margin-top:10px;
-    padding:18px;
-    border-left:3px solid #7aa2ff;
     background:rgba(255,255,255,0.04);
-    border-radius:10px;
-    max-width:850px;
+    border-left:3px solid #7aa2ff;
+    padding:20px;
+    border-radius:12px;
+    max-width:900px;
+}
+
+/* FADE ANIMATION */
+.fade{
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.8s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* FOOTER */
@@ -181,7 +194,7 @@ footer{
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero fade">
 
     <div class="hero-container">
 
@@ -189,9 +202,9 @@ footer{
             <h1>Yu-Heng Liu</h1>
 
             <p class="subtitle">
-                A STEM-focused student passionate about mathematics, physics,
-                engineering, leadership, and problem-solving. I enjoy building
-                meaningful projects and competing in academic challenges.
+                A STEM-driven student focused on mathematics, physics,
+                engineering, and leadership. I enjoy solving complex problems,
+                building projects, and competing in academic challenges.
             </p>
 
             <a class="btn" href="about.html">Explore Portfolio</a>
@@ -205,7 +218,7 @@ footer{
 </section>
 
 <!-- OVERVIEW -->
-<section>
+<section class="fade">
     <h2>Overview</h2>
 
     <div class="grid">
@@ -217,12 +230,12 @@ footer{
 
         <div class="card">
             <h3>Competitions</h3>
-            <p>STEM contests and problem-solving competitions experience.</p>
+            <p>STEM olympiads, global contests, and problem-solving events.</p>
         </div>
 
         <div class="card">
             <h3>Leadership</h3>
-            <p>MUN, fundraising, and student-led initiatives.</p>
+            <p>MUN, fundraising, and school leadership roles.</p>
         </div>
 
         <div class="card">
@@ -234,30 +247,45 @@ footer{
 </section>
 
 <!-- JOURNEY -->
-<section>
+<section class="fade">
     <h2>Journey</h2>
 
     <img class="image"
          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
 
-    <p style="margin-top:10px; color:#cfd3ea; max-width:850px;">
-        My journey reflects continuous growth through academics,
-        competitions, leadership, and personal development.
+    <p style="margin-top:12px; color:#cfd3ea; max-width:900px;">
+        My journey is defined by continuous growth through academics,
+        leadership experiences, competitions, and self-driven learning.
     </p>
 </section>
 
 <!-- PHILOSOPHY -->
-<section>
+<section class="fade">
     <h2>Philosophy</h2>
 
     <div class="quote">
-        “Consistency, curiosity, and resilience define long-term success.”
+        “Consistency, curiosity, and resilience are the foundation of long-term success.”
     </div>
 </section>
 
 <footer>
     © 2026 Yu-Heng Liu
 </footer>
+
+<script>
+// simple scroll animation
+const elements = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
