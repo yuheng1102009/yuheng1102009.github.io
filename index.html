@@ -18,8 +18,8 @@
 body{
     background:#05060f;
     color:white;
-    line-height:1.95;
-    letter-spacing:0.6px;
+    line-height:1.85;
+    letter-spacing:0.4px;
     font-size:18px;
 }
 
@@ -31,7 +31,7 @@ nav{
     display:flex;
     justify-content:space-between;
     padding:14px 7%;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.65);
     backdrop-filter:blur(14px);
     z-index:1000;
 }
@@ -68,16 +68,17 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:4.2rem;
+    font-size:4rem;
+    letter-spacing:-0.8px;
     margin-bottom:12px;
 }
 
-/* SUBTITLE */
+/* TEXT */
 .subtitle{
-    font-size:1.2rem;
+    font-size:1.15rem;
     color:#cfd3ea;
     max-width:650px;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 /* BUTTON */
@@ -89,6 +90,11 @@ nav a:hover{
     border-radius:30px;
     font-weight:600;
     text-decoration:none;
+    transition:0.2s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
 }
 
 /* PROFILE IMAGE */
@@ -103,7 +109,7 @@ nav a:hover{
 
 /* SECTIONS */
 section{
-    padding:80px 7%;
+    padding:75px 7%;
 }
 
 h2{
@@ -124,15 +130,26 @@ h2{
     border:1px solid rgba(255,255,255,0.08);
     padding:22px;
     border-radius:16px;
+    transition:0.2s;
 }
 
-/* IMAGE */
-.image{
+.card:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,0.08);
+}
+
+/* JOURNEY IMAGES */
+.journey-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:14px;
+}
+
+.journey-grid img{
     width:100%;
-    max-height:380px;
+    height:260px;
     object-fit:cover;
-    border-radius:16px;
-    margin-top:10px;
+    border-radius:14px;
 }
 
 /* QUOTE */
@@ -142,6 +159,7 @@ h2{
     padding:22px;
     border-radius:12px;
     font-style:italic;
+    max-width:900px;
 }
 
 /* FOOTER */
@@ -156,6 +174,7 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <nav>
     <div><b>Yu-Heng Liu</b></div>
     <div>
@@ -199,17 +218,17 @@ footer{
 
         <div class="card">
             <h3>Academics</h3>
-            <p>Strong foundation in math, physics, and analytical reasoning.</p>
+            <p>Strong foundation in mathematics, physics, and analytical reasoning.</p>
         </div>
 
         <div class="card">
             <h3>Competitions</h3>
-            <p>STEM contests and international problem-solving challenges.</p>
+            <p>STEM olympiads, international contests, and problem solving.</p>
         </div>
 
         <div class="card">
             <h3>Leadership</h3>
-            <p>MUN, fundraising, and student-led initiatives.</p>
+            <p>MUN, fundraising, and team coordination experience.</p>
         </div>
 
         <div class="card">
@@ -224,12 +243,18 @@ footer{
 <section>
     <h2>Journey</h2>
 
-    <img class="image"
-         src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
+    <div class="journey-grid">
 
-    <p style="margin-top:10px; color:#cfd3ea; max-width:900px;">
-        My journey reflects continuous growth through academics,
-        competitions, leadership, and personal development.
+        <img src="https://cdn.mos.cms.futurecdn.net/HFUAjfbamNhbM8dsNSQW3D-1920-80.jpg.webp">
+        <img src="https://cdn-ildnkdd.nitrocdn.com/AMFEIagBeMjaalfLMXTfsVaauMFtXDMd/assets/images/optimized/rev-361d9cc/ace.edu/wp-content/uploads/2025/09/25BLG071-Effective-Leader_Blog.png">
+        <img src="https://assets.fiba.basketball/image/upload/w_2000,h_1125,c_fill,g_auto/q_auto/f_auto/v1727163566/fzmo648w78xfj8xctgne">
+
+    </div>
+
+    <p style="margin-top:12px; color:#cfd3ea; max-width:900px;">
+        My journey reflects continuous growth through academics, leadership,
+        competition, and athletics. Each experience has shaped my discipline,
+        mindset, and long-term goals.
     </p>
 </section>
 
@@ -242,6 +267,7 @@ footer{
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
     © 2026 Yu-Heng Liu
 </footer>
