@@ -19,8 +19,8 @@ body{
     background:#05060f;
     color:white;
     line-height:1.95;
-    letter-spacing:0.6px; /* 👈 more spacing between letters/words */
-    font-size:18px;       /* 👈 BASE FONT SIZE INCREASED */
+    letter-spacing:0.6px;
+    font-size:18px;
 }
 
 /* NAV */
@@ -42,7 +42,6 @@ nav a{
     margin-left:16px;
     font-size:15px;
     opacity:0.85;
-    transition:0.2s;
 }
 
 nav a:hover{
@@ -68,14 +67,12 @@ nav a:hover{
     align-items:center;
 }
 
-/* NAME BIGGER */
 .hero h1{
-    font-size:4.2rem; /* 👈 bigger */
-    letter-spacing:-0.5px;
+    font-size:4.2rem;
     margin-bottom:12px;
 }
 
-/* SUBTITLE BIGGER */
+/* UPDATED TEXT STYLE */
 .subtitle{
     font-size:1.2rem;
     color:#cfd3ea;
@@ -92,12 +89,6 @@ nav a:hover{
     border-radius:30px;
     font-weight:600;
     text-decoration:none;
-    transition:0.2s;
-    font-size:16px;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
 }
 
 /* PROFILE IMAGE */
@@ -116,7 +107,7 @@ section{
 }
 
 h2{
-    font-size:2.3rem; /* 👈 bigger section titles */
+    font-size:2.3rem;
     margin-bottom:22px;
 }
 
@@ -133,13 +124,6 @@ h2{
     border:1px solid rgba(255,255,255,0.08);
     padding:22px;
     border-radius:16px;
-    transition:0.25s;
-    font-size:17px;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    background:rgba(255,255,255,0.08);
 }
 
 /* IMAGE */
@@ -151,15 +135,13 @@ h2{
     margin-top:10px;
 }
 
-/* QUOTE (ITALIC ADDED HERE) */
+/* QUOTE */
 .quote{
     background:rgba(255,255,255,0.04);
     border-left:3px solid #7aa2ff;
     padding:22px;
     border-radius:12px;
-    max-width:900px;
-    font-size:18px;
-    font-style:italic; /* 👈 FINAL PHILOSOPHY IS ITALIC */
+    font-style:italic;
 }
 
 /* FOOTER */
@@ -185,7 +167,6 @@ footer{
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
 
     <div class="hero-container">
@@ -194,75 +175,20 @@ footer{
             <h1>Yu-Heng Liu</h1>
 
             <p class="subtitle">
-                A STEM-driven student passionate about mathematics, physics,
-                engineering, leadership, and problem-solving. I enjoy building
-                impactful projects and competing in academic challenges.
+                A STEM-driven student passionate about mathematics, physics, and engineering, with a strong interest in problem-solving, analytical thinking, and building impactful real-world projects. I actively engage in academic competitions and enjoy applying theoretical concepts to challenging, open-ended problems.
+
+                <br><br>
+
+                Beyond academics, I am also an athlete who values discipline, teamwork, and consistency developed through sports training and competition. I naturally take on leadership roles in group settings, often helping organize, coordinate, and motivate teams toward shared goals.
             </p>
 
             <a class="btn" href="about.html">Explore Portfolio</a>
         </div>
 
-        <img class="profile-img"
-             src="me.jpg"
-             alt="Yu-Heng Liu">
+        <img class="profile-img" src="me.jpg" alt="Yu-Heng Liu">
 
     </div>
 </section>
-
-<!-- OVERVIEW -->
-<section>
-    <h2>Overview</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Academics</h3>
-            <p>Strong foundation in math, physics, and analytical reasoning.</p>
-        </div>
-
-        <div class="card">
-            <h3>Competitions</h3>
-            <p>STEM contests and international problem-solving challenges.</p>
-        </div>
-
-        <div class="card">
-            <h3>Leadership</h3>
-            <p>MUN, fundraising, and student-led initiatives.</p>
-        </div>
-
-        <div class="card">
-            <h3>Athletics</h3>
-            <p>Basketball builds discipline, teamwork, and resilience.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- JOURNEY -->
-<section>
-    <h2>Journey</h2>
-
-    <img class="image"
-         src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
-
-    <p style="margin-top:10px; color:#cfd3ea; max-width:900px;">
-        My journey reflects continuous growth through academics,
-        competitions, leadership, and personal development.
-    </p>
-</section>
-
-<!-- PHILOSOPHY -->
-<section>
-    <h2>Philosophy</h2>
-
-    <div class="quote">
-        “Consistency, curiosity, and resilience define long-term success.”
-    </div>
-</section>
-
-<footer>
-    © 2026 Yu-Heng Liu
-</footer>
 
 </body>
 </html>
