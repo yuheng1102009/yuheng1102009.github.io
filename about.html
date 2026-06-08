@@ -21,6 +21,7 @@ body{
     font-size:18px;
     overflow-x:hidden;
 
+    /* same animated background */
     background: linear-gradient(-45deg,#05060f,#0b1020,#0a0f1a,#05060f);
     background-size:400% 400%;
     animation: gradientMove 18s ease infinite;
@@ -32,11 +33,6 @@ body{
     100%{background-position:0% 50%}
 }
 
-/* smooth page feel (NEW UPGRADE) */
-html{
-    scroll-behavior:smooth;
-}
-
 /* NAV */
 nav{
     position:fixed;
@@ -45,10 +41,9 @@ nav{
     display:flex;
     justify-content:space-between;
     padding:14px 7%;
-    background:rgba(0,0,0,0.35);
-    backdrop-filter:blur(18px);
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(16px);
     z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
 nav a{
@@ -56,8 +51,7 @@ nav a{
     text-decoration:none;
     margin-left:16px;
     font-size:15px;
-    opacity:0.8;
-    transition:0.2s;
+    opacity:0.85;
 }
 
 nav a:hover{
@@ -83,6 +77,7 @@ nav a:hover{
 
 .hero h1{
     font-size:4.2rem;
+    letter-spacing:-1px;
 }
 
 .hero p{
@@ -97,18 +92,13 @@ nav a:hover{
     border-radius:50%;
     object-fit:cover;
     border:2px solid rgba(255,255,255,0.2);
-    transition:0.3s;
-}
-
-.hero img:hover{
-    transform:scale(1.05);
 }
 
 /* SECTIONS */
 section{
     margin-bottom:80px;
     opacity:0;
-    transform:translateY(40px);
+    transform:translateY(30px);
     transition:0.8s ease;
 }
 
@@ -128,13 +118,7 @@ h2{
     border:1px solid rgba(255,255,255,0.08);
     border-radius:16px;
     padding:26px;
-    backdrop-filter:blur(12px);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    background:rgba(255,255,255,0.07);
+    backdrop-filter:blur(10px);
 }
 
 /* GRID */
@@ -142,22 +126,6 @@ h2{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:16px;
-}
-
-/* END IMAGE (NEW) */
-.end-image{
-    width:100%;
-    max-width:600px;
-    margin:0 auto;
-    display:block;
-    border-radius:18px;
-    border:1px solid rgba(255,255,255,0.15);
-    box-shadow:0 20px 60px rgba(0,0,0,0.4);
-    transition:0.4s;
-}
-
-.end-image:hover{
-    transform:scale(1.02);
 }
 
 /* QUOTE */
@@ -192,59 +160,82 @@ footer{
 
 <div class="container">
 
+    <!-- HERO -->
     <div class="hero">
         <div>
             <h1>Who I Am</h1>
             <p>
                 I am someone who learns through exploration, adapts through experience,
                 and grows through challenges. My journey is shaped not only by academics,
-                but also by how I think and respond to the world.
+                but also by the way I think, reflect, and respond to the world around me.
             </p>
         </div>
 
         <img src="me.jpg">
     </div>
 
+    <!-- SECTION 1 -->
     <section>
         <h2>Thinking Style</h2>
         <div class="card">
-            I break down problems from first principles and rebuild understanding logically.
+            I naturally question how and why things work. Instead of accepting information directly,
+            I tend to break ideas down, analyze patterns, and rebuild understanding from first principles.
+            This approach helps me adapt quickly to unfamiliar problems.
         </div>
     </section>
 
+    <!-- SECTION 2 -->
     <section>
         <h2>Personal Growth</h2>
         <div class="card">
-            Growth comes from discomfort, reflection, and consistency over time.
+            Growth for me has often come from discomfort — moments where I had to adapt, adjust,
+            or rethink my approach. Over time, I learned that improvement is not linear,
+            but built through consistent reflection and effort.
         </div>
     </section>
 
+    <!-- SECTION 3 -->
     <section>
         <h2>Outside School</h2>
+
         <div class="grid">
-            <div class="card">Technology & innovation</div>
-            <div class="card">Reading & ideas</div>
-            <div class="card">Basketball discipline</div>
-            <div class="card">Learning beyond syllabus</div>
+            <div class="card">
+                I enjoy following ideas in technology, science, and real-world innovation.
+            </div>
+
+            <div class="card">
+                I like reading and understanding concepts beyond my academic syllabus.
+            </div>
+
+            <div class="card">
+                Basketball helps me stay disciplined and mentally resilient.
+            </div>
+
+            <div class="card">
+                I enjoy learning skills that are not tied to any single subject.
+            </div>
         </div>
     </section>
 
+    <!-- SECTION 4 -->
     <section>
         <h2>What Drives Me</h2>
         <div class="card">
-            Progress matters more than perfection. I value long-term growth over short-term results.
+            I am driven by progress — not perfection. I value steady improvement over time,
+            especially when it involves challenges that require persistence and patience.
         </div>
     </section>
 
+    <!-- QUOTE -->
     <section>
         <div class="quote">
             “Consistency, curiosity, and resilience define long-term success.”
         </div>
     </section>
 
-    <!-- NEW IMAGE AT END -->
+    <!-- ✅ ONLY ADDITION: FINAL IMAGE -->
     <section>
-        <img class="end-image" src="my.jpg" alt="Yu-Heng Liu">
+        <img src="my.jpg" style="width:100%;max-width:600px;display:block;margin:0 auto;border-radius:18px;border:2px solid rgba(255,255,255,0.15);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
     </section>
 
 </div>
