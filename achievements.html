@@ -1,27 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Achievements</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achievements | Yu-Heng Liu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
+
+body{
+    color:white;
+    line-height:1.8;
+    font-size:18px;
+    overflow-x:hidden;
+
+    background: linear-gradient(-45deg,#05060f,#0b1020,#0a0f1a,#05060f);
+    background-size:400% 400%;
+    animation: gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:14px 7%;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(16px);
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:16px;
+    font-size:15px;
+    opacity:0.85;
+    transition:0.2s;
+}
+
+nav a:hover{
+    color:#7aa2ff;
+    opacity:1;
+}
+
+/* CONTAINER */
+.container{
+    padding:140px 7% 80px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* TITLE */
+h1{
+    font-size:3.2rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#cfd3ea;
+    margin-bottom:50px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:24px;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,0.08);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    color:#777;
+    padding:50px;
+}
+</style>
 </head>
+
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="contact.html">Contact</a>
+    <div><b>Yu-Heng Liu</b></div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
-<h1>Achievements</h1>
+<div class="container">
 
-<ul>
-    <li>ARML Gold Medal (Team)</li>
-    <li>ARML Silver Medal (Individual)</li>
-    <li>NASA Space Apps Challenge Top Placement</li>
-    <li>Ocean Challenge International Finalist</li>
-    <li>Top Physics Entrance Examination Performance</li>
-    <li>MUN Outstanding Diplomacy Award</li>
-</ul>
+    <h1>Achievements</h1>
+    <p class="subtitle">Selected academic, research, leadership, and competition highlights.</p>
+
+    <div class="grid">
+
+        <div class="card">ARML — Gold (Team)</div>
+        <div class="card">ARML — Silver (Individual)</div>
+        <div class="card">TRML — Secondary Award</div>
+        <div class="card">Physics Olympiad — Honorable Mention</div>
+        <div class="card">NTU Physics Entrance — Top 1% (Rank 9)</div>
+        <div class="card">3-Minute Science (NTU) — 1st Place</div>
+        <div class="card">Ocean Challenge — International Finalist (Top 6)</div>
+        <div class="card">UCLA Lab Research — ~$400K Project Participation</div>
+        <div class="card">Tech Company Internship</div>
+        <div class="card">Subway Internship</div>
+        <div class="card">Google Internship Pathway — Government Sponsored</div>
+        <div class="card">Fundraising Initiative — ~$1,000,000 Raised</div>
+        <div class="card">MUN — Outstanding Diplomacy Award</div>
+        <div class="card">DISMUN — Outstanding Delegate Award</div>
+        <div class="card">Founder — Student Fundraising Club</div>
+        <div class="card">Varsity Basketball Starter</div>
+
+        <!-- ✅ NEW ADDITION -->
+        <div class="card">Top 5 in Class — GPA Ranking</div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Yu-Heng Liu
+</footer>
 
 </body>
 </html>
