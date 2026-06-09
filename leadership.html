@@ -1,27 +1,348 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Leadership</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership | Yu-Heng Liu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    color:white;
+    overflow-x:hidden;
+    line-height:1.85;
+
+    background:linear-gradient(-45deg,#05060f,#0b1020,#0a0f1a,#05060f);
+    background-size:400% 400%;
+    animation:gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 7%;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(16px);
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    opacity:.85;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:#7aa2ff;
+    opacity:1;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:140px 7% 100px;
+}
+
+/* HEADER */
+
+.page-title{
+    text-align:center;
+    margin-bottom:100px;
+}
+
+.page-title h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.page-title p{
+    color:#cfd3ea;
+    font-size:1.1rem;
+    max-width:800px;
+    margin:auto;
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    max-width:1100px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:3px;
+    height:100%;
+    background:rgba(255,255,255,0.15);
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:90px;
+}
+
+.year{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#7aa2ff;
+    color:black;
+    font-size:24px;
+    font-weight:700;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 40px rgba(122,162,255,.5);
+    z-index:5;
+}
+
+.timeline-card{
+    width:42%;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.timeline-item:nth-child(odd) .timeline-card{
+    margin-left:auto;
+}
+
+.timeline-item:nth-child(even) .timeline-card{
+    margin-right:auto;
+}
+
+.timeline-card:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,0.08);
+}
+
+.timeline-card h3{
+    font-size:1.7rem;
+    margin-bottom:15px;
+}
+
+.timeline-card p{
+    color:#cfd3ea;
+    margin-bottom:15px;
+}
+
+.timeline-card ul{
+    padding-left:20px;
+}
+
+.timeline-card li{
+    margin-bottom:8px;
+    color:#d6daf0;
+}
+
+/* QUOTE */
+
+.quote{
+    margin-top:80px;
+    text-align:center;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    font-size:1.3rem;
+    font-style:italic;
+    color:#d9def5;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    color:#777;
+    padding:50px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.timeline::before{
+    left:25px;
+}
+
+.year{
+    left:25px;
+    width:65px;
+    height:65px;
+    font-size:18px;
+}
+
+.timeline-card{
+    width:calc(100% - 100px);
+    margin-left:90px !important;
+}
+
+.page-title h1{
+    font-size:3rem;
+}
+
+}
+</style>
 </head>
+
 <body>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="contact.html">Contact</a>
+    <div><b>Yu-Heng Liu</b></div>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </nav>
 
-<h1>Leadership</h1>
+<div class="container">
 
-<h2>Experiences</h2>
+    <div class="page-title">
+        <h1>Leadership Journey</h1>
+        <p>
+            Leadership for me has been about building communities,
+            connecting people, and creating meaningful impact through
+            service, athletics, research, and collaboration.
+        </p>
+    </div>
 
-<ul>
-    <li>Founder of a fundraising initiative</li>
-    <li>Model United Nations delegate</li>
-    <li>Project organizer and team leader</li>
-    <li>Community outreach participant</li>
-</ul>
+    <div class="timeline">
+
+        <!-- 2024 -->
+
+        <div class="timeline-item">
+
+            <div class="year">2024</div>
+
+            <div class="timeline-card">
+
+                <h3>Founder & Executive Director</h3>
+
+                <p>
+                    Established a student-led fundraising initiative focused on
+                    international development and humanitarian support.
+                </p>
+
+                <ul>
+                    <li>Founded and led the fundraising organization.</li>
+                    <li>Built collaborations with students from TAS, KAS, and MAK.</li>
+                    <li>Worked alongside ICDF initiatives and development programs.</li>
+                    <li>Met with representatives and diplomats from Palau.</li>
+                    <li>Helped coordinate fundraising campaigns totaling approximately NT$1,000,000.</li>
+                    <li>Managed outreach, recruitment, partnerships, and event planning.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- 2025 -->
+
+        <div class="timeline-item">
+
+            <div class="year">2025</div>
+
+            <div class="timeline-card">
+
+                <h3>Athletic & Academic Leadership</h3>
+
+                <p>
+                    Expanded leadership into both competitive athletics and STEM organizations.
+                </p>
+
+                <ul>
+                    <li>Vice Captain of the Basketball Team.</li>
+                    <li>Starting Small Forward (SF).</li>
+                    <li>Vice President of Physics Debate & Research.</li>
+                    <li>Helped organize club activities and research discussions.</li>
+                    <li>Mentored younger students and supported team development.</li>
+                    <li>Strengthened communication, teamwork, and organizational skills.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- 2026 -->
+
+        <div class="timeline-item">
+
+            <div class="year">2026</div>
+
+            <div class="timeline-card">
+
+                <h3>Research & Technology Leadership</h3>
+
+                <p>
+                    Transitioned leadership into large-scale STEM research
+                    and technology initiatives.
+                </p>
+
+                <ul>
+                    <li>Government-Sponsored Google Program Participant.</li>
+                    <li>Led collaborative teams within Google-sponsored projects.</li>
+                    <li>Research Team Lead in UCLA laboratory initiatives.</li>
+                    <li>Coordinated interdisciplinary STEM projects and communication.</li>
+                    <li>Managed project planning, task delegation, and team organization.</li>
+                    <li>Expanded leadership experience into research and innovation.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="quote">
+        “Great leadership is not measured by authority, but by the opportunities,
+        impact, and growth created for others.”
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Yu-Heng Liu
+</footer>
 
 </body>
 </html>
